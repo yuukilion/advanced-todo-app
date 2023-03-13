@@ -11,7 +11,12 @@ interface TodoCard {
   DateTime: string;
 }
 
-export default function TodoCard({ title, category, priority, DateTime }: TodoCard) {
+export default function TodoCard({
+  title,
+  category,
+  priority,
+  DateTime,
+}: TodoCard) {
   return (
     <Card
       hoverable
