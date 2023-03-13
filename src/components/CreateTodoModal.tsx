@@ -1,4 +1,4 @@
-import { Modal, Input } from 'antd';
+import { Modal, Input, Select, DatePicker } from 'antd';
 import { Dispatch, SetStateAction, useState } from 'react';
 import { useAppDispatch } from '@/hooks';
 import { TodoState } from '@/stores/todo';
@@ -8,6 +8,8 @@ interface TodoModal {
   isModalOpen: boolean;
   setIsModalOpen: Dispatch<SetStateAction<boolean>>;
 }
+
+const { TextArea } = Input;
 
 export default function CreateTodoModal({
   isModalOpen,
@@ -32,7 +34,30 @@ export default function CreateTodoModal({
       okText='作成'
       cancelText='キャンセル'
     >
-      <Input />
+      <label>
+        タイトル
+        <Input />
+      </label>
+      <label>
+        カテゴリー
+        <Select />
+      </label>
+      <label>
+        優先度
+        <Select />
+      </label>
+      <label>
+        期限
+        <DatePicker showTime />
+      </label>
+      <label>
+        場所
+        <Input />
+      </label>
+      <label>
+        詳細
+        <TextArea />
+      </label>
     </Modal>
   );
 }
