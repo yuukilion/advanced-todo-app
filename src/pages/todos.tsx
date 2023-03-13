@@ -1,9 +1,17 @@
+import CreateTodoModal from '@/components/CreateTodoModal';
 import TodoCard from '@/components/TodoCard';
-import { useAppDispatch, useAppSelector } from '@/hooks';
+import { useAppSelector } from '@/hooks';
+import { Button } from 'antd';
+import { useState } from 'react';
 
 export default function Todos() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
   const todos = useAppSelector((state) => state);
-  const dispatch = useAppDispatch();
 
   return (
     <div>
@@ -20,6 +28,11 @@ export default function Todos() {
           />
         ))
       )}
+      <Button onClick={openModal}>追加する</Button>
+      <CreateTodoModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
     </div>
   );
 }
