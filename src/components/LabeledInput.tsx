@@ -1,12 +1,11 @@
 import { TodoState } from '@/stores/todo';
 import { Input } from 'antd';
 import styled from 'styled-components';
-
-type ChangeTarget = 'title';
+import { ChangeTarget } from './CreateTodoModal';
 
 interface LabeledInputProps {
   label?: string;
-  onChange: (changeTarget: "title", value: string) => void;
+  onChange: (changeTarget: ChangeTarget, value: string) => void;
   changeTarget: ChangeTarget;
   state: TodoState;
 }
@@ -21,7 +20,6 @@ export default function LabeledInput({
   changeTarget,
   state
 }: LabeledInputProps) {
-
   const setTodoInfo = (value: string) => {
     onChange(changeTarget, value);
   };
