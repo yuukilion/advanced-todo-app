@@ -21,12 +21,7 @@ export default function Home() {
           <Calendar style={{ border: '1px solid gray' }} />
         </div>
         <div>comming soon</div>
-        <TodoCard
-          title={'サンプル'}
-          priority={1}
-          category={'ビジネス'}
-          DateTime={'2022-01-01'}
-        />
+        <TodoCard title={'サンプル'} priority={1} category={'ビジネス'} DateTime={'2022-01-01'} />
       </main>
     </>
   );

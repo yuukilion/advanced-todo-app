@@ -14,12 +14,7 @@ const StyledInput = styled(Input)`
   width: 300px;
 `;
 
-export default function LabeledInput({
-  label,
-  onChange,
-  changeTarget,
-  state
-}: LabeledInputProps) {
+export default function LabeledInput({ label, onChange, changeTarget, state }: LabeledInputProps) {
   const setTodoInfo = (value: string) => {
     onChange(changeTarget, value);
   };
@@ -28,10 +23,7 @@ export default function LabeledInput({
     <div>
       <label>
         {label}
-        <StyledInput
-          value={state[changeTarget]}
-          onChange={(e) => setTodoInfo(e.target.value)}
-        />
+        <StyledInput value={state[changeTarget]} onChange={(e) => setTodoInfo(e.target.value)} />
       </label>
     </div>
   );

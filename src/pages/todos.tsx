@@ -29,10 +29,7 @@ export default function Todos() {
         ))
       )}
       <Button onClick={openModal}>追加する</Button>
-      <CreateTodoModal
-        isModalOpen={isModalOpen}
-        setIsModalOpen={setIsModalOpen}
-      />
+      <CreateTodoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </div>
   );
 }

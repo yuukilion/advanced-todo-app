@@ -11,12 +11,7 @@ interface TodoCard {
   DateTime: string;
 }
 
-export default function TodoCard({
-  title,
-  category,
-  priority,
-  DateTime,
-}: TodoCard) {
+export default function TodoCard({ title, category, priority, DateTime }: TodoCard) {
   return (
     <Card
       hoverable
@@ -24,22 +19,13 @@ export default function TodoCard({
       actions={[<CheckOutlined key={1} />, <DeleteOutlined key={2} />]}
       style={{ width: '360px', textAlign: 'center' }}
     >
-      <Card.Grid
-        style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }}
-        hoverable={false}
-      >
+      <Card.Grid style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }} hoverable={false}>
         <Text>カテゴリー: {category}</Text>
       </Card.Grid>
-      <Card.Grid
-        style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }}
-        hoverable={false}
-      >
+      <Card.Grid style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }} hoverable={false}>
         <Text>優先度: {priority}</Text>
       </Card.Grid>
-      <Card.Grid
-        style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }}
-        hoverable={false}
-      >
+      <Card.Grid style={{ width: '100%', textAlign: 'center', boxShadow: 'none' }} hoverable={false}>
         <Text>日付と時刻: {DateTime}</Text>
       </Card.Grid>
     </Card>
