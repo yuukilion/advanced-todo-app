@@ -29,9 +29,9 @@ export default function CreateTodoModal({
   });
 
   const PRIORITY_OPTIONS = [
-    { value: 1, label: '低' },
-    { value: 2, label: '中' },
-    { value: 3, label: '高' },
+    { value: '1', label: '低' },
+    { value: '2', label: '中' },
+    { value: '3', label: '高' },
   ];
 
   const CATEGORY_OPTIONS = [
