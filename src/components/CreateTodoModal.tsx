@@ -15,10 +15,7 @@ interface TodoModal {
 
 export type ChangeTarget = 'title' | 'priority' | 'category';
 
-export default function CreateTodoModal({
-  isModalOpen,
-  setIsModalOpen,
-}: TodoModal) {
+export default function CreateTodoModal({ isModalOpen, setIsModalOpen }: TodoModal) {
   const [todo, setTodo] = useState<TodoState>({
     id: 0,
     title: '',
@@ -83,37 +80,24 @@ export default function CreateTodoModal({
   };
 
   return (
-    <Modal
-      open={isModalOpen}
-      onOk={createTodo}
-      onCancel={() => handleCancel()}
-      okText='作成'
-      cancelText='キャンセル'
-    >
-      <LabeledInput
-        label='タイトル'
-        onChange={handleInputChange}
-        changeTarget='title'
-        state={todo}
-      />
+    <Modal open={isModalOpen} onOk={createTodo} onCancel={() => handleCancel()} okText='作成' cancelText='キャンセル'>
+      <LabeledInput label='タイトル' onChange={handleInputChange} changeTarget='title' state={todo} />
       <LabeledSelectBox
         label='カテゴリー'
         changeTarget='category'
         onChange={handleSelectBoxChange}
         options={CATEGORY_OPTIONS}
+        state={todo}
       />
       <LabeledSelectBox
         label='優先度'
         changeTarget='priority'
         onChange={handleSelectBoxChange}
         options={PRIORITY_OPTIONS}
-      />
-      <LabeledDatePicker label='期限' onChange={handleDatePickerChange} />
-      <LabeledTextArea
-        label='詳細'
-        onChange={handleTextAreaChange}
         state={todo}
       />
+      <LabeledDatePicker label='期限' onChange={handleDatePickerChange} state={todo} />
+      <LabeledTextArea label='詳細' onChange={handleTextAreaChange} state={todo} />
     </Modal>
   );
 }
