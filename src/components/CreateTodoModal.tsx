@@ -47,6 +47,14 @@ export default function CreateTodoModal({ isModalOpen, setIsModalOpen }: TodoMod
   const createTodo = () => {
     dispatch(add(todo));
     setIsModalOpen(false);
+    setTodo({
+      id: 0,
+      title: '',
+      category: '',
+      priority: '',
+      limit: '',
+      detail: '',
+    });
   };
 
   const handleCancel = () => {
