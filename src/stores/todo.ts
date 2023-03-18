@@ -6,7 +6,7 @@ export interface TodoState {
   title: string;
   category: string;
   priority: string;
-  limit: any;
+  limit: string;
   detail: string;
 }
 
